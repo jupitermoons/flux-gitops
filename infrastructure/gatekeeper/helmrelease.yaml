@@ -14,6 +14,9 @@ metadata:
   name: gatekeeper
   namespace: gatekeeper-system
 spec:
+  install:
+    createNamespace: true
+  targetNamespace: gatekeeper-system
   chart:
     spec:
       chart: gatekeeper

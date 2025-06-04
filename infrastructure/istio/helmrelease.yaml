@@ -14,6 +14,9 @@ metadata:
   name: istio-base
   namespace: istio-system
 spec:
+  install:
+    createNamespace: true
+  targetNamespace: istio-system
   chart:
     spec:
       chart: base
@@ -30,6 +33,9 @@ metadata:
   name: istiod
   namespace: istio-system
 spec:
+  install:
+    createNamespace: true
+  targetNamespace: istio-system
   chart:
     spec:
       chart: istiod
