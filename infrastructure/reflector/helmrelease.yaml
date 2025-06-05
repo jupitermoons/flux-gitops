@@ -14,9 +14,7 @@ metadata:
   name: reflector
   namespace: flux-system
 spec:
-  install:
-    createNamespace: true
-  targetNamespace: kraken-system
+  targetNamespace: shared-system
   chart:
     spec:
       chart: reflector

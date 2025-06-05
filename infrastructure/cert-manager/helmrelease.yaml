@@ -1,4 +1,3 @@
-# HelmRepository: This must remain in the flux-system namespace
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
@@ -8,16 +7,13 @@ spec:
   url: https://charts.jetstack.io
   interval: 10m
 ---
-# HelmRelease: This installs cert-manager into kraken-system
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: cert-manager
   namespace: flux-system
 spec:
-  install:
-    createNamespace: true
-  targetNamespace: kraken-system
+  targetNamespace: shared-system
   interval: 1h
   chart:
     spec:
