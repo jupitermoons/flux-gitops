@@ -34,4 +34,4 @@ spec:
     domainFilters:
       - yourdomain.com
     serviceMonitor:
-      enabled: true
+      enabled: false
