@@ -1,1 +1,10 @@
-../commonfiles/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../infrastructure/base/shared-system
+  - ../../infrastructure/base/cert-manager
+  - ../../infrastructure/base/external-dns
+  - ../../infrastructure/base/gatekeeper
+  - ../../infrastructure/base/istio
+  - ../../infrastructure/base/keda
+  - ../../infrastructure/base/reflector
