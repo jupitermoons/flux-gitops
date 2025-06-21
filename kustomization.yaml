@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+patchesStrategicMerge:
+  - patches/helm-controller-image-patch.yaml
+  - patches/kustomize-controller-image-patch.yaml
+  - patches/notification-controller-image-patch.yaml
+  - patches/source-controller-image-patch.yaml
+  - patches/gatekeeper-image-patch.yaml
+  - patches/pilot-image-patch.yaml
+  - patches/keda-admission-webhooks-image-patch.yaml
+  - patches/keda-image-patch.yaml
+  - patches/keda-metrics-apiserver-image-patch.yaml
+  - patches/cert-manager-controller-image-patch.yaml
+  - patches/cert-manager-cainjector-image-patch.yaml
+  - patches/cert-manager-webhook-image-patch.yaml
+  - patches/dns-external-dns-image-patch.yaml
+  - patches/kubernetes-reflector-image-patch.yaml

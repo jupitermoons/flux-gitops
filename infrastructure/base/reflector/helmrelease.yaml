@@ -32,7 +32,7 @@ spec:
               apiVersion: apps/v1
               kind: Deployment
               metadata:
-                name: reflector
+                name: shared-system-reflector
               spec:
                 template:
                   spec:

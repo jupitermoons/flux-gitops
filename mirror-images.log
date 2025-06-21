@@ -1,0 +1,418 @@
+Using AWS profile: gardener-poc
+AWS Account ID: 043309336908
+AWS Region: us-west-2
+Target ECR Registry: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images
+Logging in to ECR...
+Login Succeeded
+Login succeeded.
+Mirroring ghcr.io/fluxcd/helm-controller:v1.3.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-helm-controller:v1.3.0
+v1.3.0: Pulling from fluxcd/helm-controller
+Digest: sha256:db55d9d9f9b5106acd8c21da6916b8e285fcfc5572f214361ececd1a8571a4f0
+Status: Image is up to date for ghcr.io/fluxcd/helm-controller:v1.3.0
+ghcr.io/fluxcd/helm-controller:v1.3.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-helm-controller]
+8b5c358584c8: Preparing
+5cbd148c4eb9: Preparing
+a16e98724c05: Preparing
+5cbd148c4eb9: Layer already exists
+8b5c358584c8: Layer already exists
+a16e98724c05: Layer already exists
+v1.3.0: digest: sha256:4de4c232619b35a6605040ddbff1da11a8968a6b8c7db5a3ac231a199f3bc7c1 size: 950
+Created patch: patches/helm-controller-image-patch.yaml
+Mirroring ghcr.io/fluxcd/kustomize-controller:v1.6.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-kustomize-controller:v1.6.0
+v1.6.0: Pulling from fluxcd/kustomize-controller
+Digest: sha256:d8c5445003196791441354f2d549e96cc6e69bb9ef6c5a7e440918dab0503776
+Status: Image is up to date for ghcr.io/fluxcd/kustomize-controller:v1.6.0
+ghcr.io/fluxcd/kustomize-controller:v1.6.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-kustomize-controller]
+be5642b8ff5b: Preparing
+d2547dfc7678: Preparing
+a16e98724c05: Preparing
+a16e98724c05: Layer already exists
+be5642b8ff5b: Layer already exists
+d2547dfc7678: Layer already exists
+v1.6.0: digest: sha256:2e95f551b5794d33d9da074054b3f1be097d9d7f440ae866a677d67686abd103 size: 952
+Created patch: patches/kustomize-controller-image-patch.yaml
+Mirroring ghcr.io/fluxcd/notification-controller:v1.6.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-notification-controller:v1.6.0
+v1.6.0: Pulling from fluxcd/notification-controller
+Digest: sha256:80174ff676407af7a6feff67b0c2f100de9f7f89df4c26fc871e4d4c4006544d
+Status: Image is up to date for ghcr.io/fluxcd/notification-controller:v1.6.0
+ghcr.io/fluxcd/notification-controller:v1.6.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-notification-controller]
+b5261da9a426: Preparing
+e206640aaa9d: Preparing
+a16e98724c05: Preparing
+a16e98724c05: Layer already exists
+b5261da9a426: Layer already exists
+e206640aaa9d: Layer already exists
+v1.6.0: digest: sha256:3f5f3cb2f7762fe9c560129db8b9004377de0a1613dcd2c28de5b97d472fa3b8 size: 950
+Created patch: patches/notification-controller-image-patch.yaml
+Mirroring ghcr.io/fluxcd/source-controller:v1.6.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-source-controller:v1.6.0
+v1.6.0: Pulling from fluxcd/source-controller
+Digest: sha256:44ea51a40e4da2c0f19427df3219f29b86c8fce38539d227f6ffc2bdc944036f
+Status: Image is up to date for ghcr.io/fluxcd/source-controller:v1.6.0
+ghcr.io/fluxcd/source-controller:v1.6.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-source-controller]
+6242b898cfc1: Preparing
+a0027bfea805: Preparing
+a16e98724c05: Preparing
+a0027bfea805: Layer already exists
+a16e98724c05: Layer already exists
+6242b898cfc1: Layer already exists
+v1.6.0: digest: sha256:80ee4d6fde9683fa428a9d3e32a7754f46f39e88952604db7436e96bceceb4fb size: 950
+Created patch: patches/source-controller-image-patch.yaml
+Mirroring openpolicyagent/gatekeeper:v3.14.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/gatekeeper:v3.14.0
+v3.14.0: Pulling from openpolicyagent/gatekeeper
+Digest: sha256:3599798fe596f9d4ccf066808719e5cb0363953a808c130a82bd9991f2d682a9
+Status: Image is up to date for openpolicyagent/gatekeeper:v3.14.0
+docker.io/openpolicyagent/gatekeeper:v3.14.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/gatekeeper]
+404ee4fe627e: Preparing
+4cb10dd2545b: Preparing
+d2d7ec0f6756: Preparing
+1a73b54f556b: Preparing
+e624a5370eca: Preparing
+d52f02c6501c: Preparing
+ff5700ec5418: Preparing
+7bea6b893187: Preparing
+6fbdf253bbc2: Preparing
+033d02f5751f: Preparing
+d52f02c6501c: Waiting
+ff5700ec5418: Waiting
+7bea6b893187: Waiting
+6fbdf253bbc2: Waiting
+033d02f5751f: Waiting
+4cb10dd2545b: Layer already exists
+404ee4fe627e: Layer already exists
+e624a5370eca: Layer already exists
+1a73b54f556b: Layer already exists
+d2d7ec0f6756: Layer already exists
+ff5700ec5418: Layer already exists
+d52f02c6501c: Layer already exists
+7bea6b893187: Layer already exists
+6fbdf253bbc2: Layer already exists
+033d02f5751f: Layer already exists
+v3.14.0: digest: sha256:765a2acaf616446b8f24401c45922d942dfe30afdb22fafcabb21bef4860c93f size: 2402
+Created patch: patches/gatekeeper-image-patch.yaml
+Mirroring docker.io/istio/pilot:1.22.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/istio-pilot:1.22.0
+1.22.0: Pulling from istio/pilot
+Digest: sha256:4eb2620d0cd1c775d7c9963f29b177334cdfe560d99caeb8cdd3a1ac9d867533
+Status: Image is up to date for istio/pilot:1.22.0
+docker.io/istio/pilot:1.22.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/istio-pilot]
+1c384af3d207: Preparing
+bf78bfedb316: Preparing
+86e0298b51ec: Preparing
+c04bc9b8a57c: Preparing
+6b9cf1a7c221: Preparing
+98e1bc7256b3: Preparing
+98e1bc7256b3: Waiting
+86e0298b51ec: Layer already exists
+c04bc9b8a57c: Layer already exists
+bf78bfedb316: Layer already exists
+6b9cf1a7c221: Layer already exists
+1c384af3d207: Layer already exists
+98e1bc7256b3: Layer already exists
+1.22.0: digest: sha256:9165b154b187ca393adbcf7265ce443e914afd176d13a8abdd03e3ca454ea734 size: 1577
+Created patch: patches/pilot-image-patch.yaml
+Mirroring ghcr.io/kedacore/keda-admission-webhooks:2.14.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-admission-webhooks:2.14.0
+2.14.0: Pulling from kedacore/keda-admission-webhooks
+Digest: sha256:abe0478a0b23d678f158ddec73ee0f7b966a2eaf9a3fa07e175465f6d96fbf79
+Status: Image is up to date for ghcr.io/kedacore/keda-admission-webhooks:2.14.0
+ghcr.io/kedacore/keda-admission-webhooks:2.14.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-admission-webhooks]
+8bed7e7dd641: Preparing
+b336e209998f: Preparing
+f4aee9e53c42: Preparing
+1a73b54f556b: Preparing
+2a92d6ac9e4f: Preparing
+bbb6cacb8c82: Preparing
+ac805962e479: Preparing
+af5aa97ebe6c: Preparing
+4d049f83d9cf: Preparing
+945d17be9a3e: Preparing
+49626df344c9: Preparing
+5f935a4f5ae5: Preparing
+4d049f83d9cf: Waiting
+945d17be9a3e: Waiting
+49626df344c9: Waiting
+5f935a4f5ae5: Waiting
+bbb6cacb8c82: Waiting
+ac805962e479: Waiting
+af5aa97ebe6c: Waiting
+2a92d6ac9e4f: Layer already exists
+1a73b54f556b: Layer already exists
+f4aee9e53c42: Layer already exists
+8bed7e7dd641: Layer already exists
+b336e209998f: Layer already exists
+bbb6cacb8c82: Layer already exists
+ac805962e479: Layer already exists
+4d049f83d9cf: Layer already exists
+af5aa97ebe6c: Layer already exists
+945d17be9a3e: Layer already exists
+5f935a4f5ae5: Layer already exists
+49626df344c9: Layer already exists
+2.14.0: digest: sha256:d88cdb4a8c0a38daa3d76e64414c869133ebc200979b52acc2edb51e7736fc96 size: 2814
+Created patch: patches/keda-admission-webhooks-image-patch.yaml
+Mirroring ghcr.io/kedacore/keda:2.14.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda:2.14.0
+2.14.0: Pulling from kedacore/keda
+Digest: sha256:c74847dd7c2a62d6a3ad0631208dab53264cec4eb0fc5ac3f41d4852ee363bf6
+Status: Image is up to date for ghcr.io/kedacore/keda:2.14.0
+ghcr.io/kedacore/keda:2.14.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda]
+c5840942a2bc: Preparing
+b336e209998f: Preparing
+f4aee9e53c42: Preparing
+1a73b54f556b: Preparing
+2a92d6ac9e4f: Preparing
+bbb6cacb8c82: Preparing
+ac805962e479: Preparing
+af5aa97ebe6c: Preparing
+4d049f83d9cf: Preparing
+945d17be9a3e: Preparing
+49626df344c9: Preparing
+5f935a4f5ae5: Preparing
+af5aa97ebe6c: Waiting
+4d049f83d9cf: Waiting
+bbb6cacb8c82: Waiting
+ac805962e479: Waiting
+945d17be9a3e: Waiting
+49626df344c9: Waiting
+5f935a4f5ae5: Waiting
+f4aee9e53c42: Layer already exists
+bbb6cacb8c82: Layer already exists
+ac805962e479: Layer already exists
+af5aa97ebe6c: Layer already exists
+4d049f83d9cf: Layer already exists
+945d17be9a3e: Layer already exists
+49626df344c9: Layer already exists
+5f935a4f5ae5: Layer already exists
+2a92d6ac9e4f: Pushed
+1a73b54f556b: Pushed
+b336e209998f: Pushed
+c5840942a2bc: Pushed
+2.14.0: digest: sha256:cfc30677d7f2b7ce68a829b2a4f6e22c160098172328b8a3011dcacf7a891050 size: 2814
+Created patch: patches/keda-image-patch.yaml
+Mirroring ghcr.io/kedacore/keda-metrics-apiserver:2.14.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-metrics-apiserver:2.14.0
+2.14.0: Pulling from kedacore/keda-metrics-apiserver
+Digest: sha256:3c6884f31ef4e7c3a344b2e7c8e4afbf338cd2448df0e0daa7473583bb632a98
+Status: Image is up to date for ghcr.io/kedacore/keda-metrics-apiserver:2.14.0
+ghcr.io/kedacore/keda-metrics-apiserver:2.14.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-metrics-apiserver]
+03cd1d7f41bb: Preparing
+b336e209998f: Preparing
+f4aee9e53c42: Preparing
+1a73b54f556b: Preparing
+2a92d6ac9e4f: Preparing
+bbb6cacb8c82: Preparing
+ac805962e479: Preparing
+af5aa97ebe6c: Preparing
+4d049f83d9cf: Preparing
+945d17be9a3e: Preparing
+49626df344c9: Preparing
+5f935a4f5ae5: Preparing
+ac805962e479: Waiting
+af5aa97ebe6c: Waiting
+4d049f83d9cf: Waiting
+945d17be9a3e: Waiting
+bbb6cacb8c82: Waiting
+49626df344c9: Waiting
+5f935a4f5ae5: Waiting
+1a73b54f556b: Layer already exists
+2a92d6ac9e4f: Layer already exists
+f4aee9e53c42: Layer already exists
+b336e209998f: Layer already exists
+03cd1d7f41bb: Layer already exists
+bbb6cacb8c82: Layer already exists
+af5aa97ebe6c: Layer already exists
+ac805962e479: Layer already exists
+4d049f83d9cf: Layer already exists
+945d17be9a3e: Layer already exists
+49626df344c9: Layer already exists
+5f935a4f5ae5: Layer already exists
+2.14.0: digest: sha256:4c73a5a5ceb31f3c8637e3580f6a4a9107b90c9a6b356ddab62763415cf60347 size: 2814
+Created patch: patches/keda-metrics-apiserver-image-patch.yaml
+Mirroring quay.io/jetstack/cert-manager-controller:v1.12.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/jetstack-cert-manager-controller:v1.12.0
+v1.12.0: Pulling from jetstack/cert-manager-controller
+Digest: sha256:4a9d0264055b4e7e791def9702e74eb76c2ff022ba185218395ec6ae22118df7
+Status: Image is up to date for quay.io/jetstack/cert-manager-controller:v1.12.0
+quay.io/jetstack/cert-manager-controller:v1.12.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/jetstack-cert-manager-controller]
+a45dd074aa60: Preparing
+2eb442856672: Preparing
+946237a18e62: Preparing
+4cb10dd2545b: Preparing
+d2d7ec0f6756: Preparing
+1a73b54f556b: Preparing
+e624a5370eca: Preparing
+d52f02c6501c: Preparing
+ff5700ec5418: Preparing
+7bea6b893187: Preparing
+6fbdf253bbc2: Preparing
+20655aa3102c: Preparing
+d52f02c6501c: Waiting
+ff5700ec5418: Waiting
+7bea6b893187: Waiting
+6fbdf253bbc2: Waiting
+1a73b54f556b: Waiting
+e624a5370eca: Waiting
+20655aa3102c: Waiting
+a45dd074aa60: Layer already exists
+d2d7ec0f6756: Layer already exists
+2eb442856672: Layer already exists
+4cb10dd2545b: Layer already exists
+946237a18e62: Layer already exists
+1a73b54f556b: Layer already exists
+e624a5370eca: Layer already exists
+ff5700ec5418: Layer already exists
+7bea6b893187: Layer already exists
+d52f02c6501c: Layer already exists
+20655aa3102c: Layer already exists
+6fbdf253bbc2: Layer already exists
+v1.12.0: digest: sha256:a6e72f39e813e840917da8c9d34902626985fc4355a6930be8e5b859fe583f8b size: 2816
+Created patch: patches/cert-manager-controller-image-patch.yaml
+Mirroring quay.io/jetstack/cert-manager-cainjector:v1.12.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/jetstack-cert-manager-cainjector:v1.12.0
+v1.12.0: Pulling from jetstack/cert-manager-cainjector
+Digest: sha256:e0a5b06b231c238ac678016d2d134bc79def1ad26e8bc0e459ddc37c07abbd68
+Status: Image is up to date for quay.io/jetstack/cert-manager-cainjector:v1.12.0
+quay.io/jetstack/cert-manager-cainjector:v1.12.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/jetstack-cert-manager-cainjector]
+a45dd074aa60: Preparing
+2eb442856672: Preparing
+9003fea7a068: Preparing
+4cb10dd2545b: Preparing
+d2d7ec0f6756: Preparing
+1a73b54f556b: Preparing
+e624a5370eca: Preparing
+d52f02c6501c: Preparing
+ff5700ec5418: Preparing
+7bea6b893187: Preparing
+6fbdf253bbc2: Preparing
+20655aa3102c: Preparing
+e624a5370eca: Waiting
+d52f02c6501c: Waiting
+ff5700ec5418: Waiting
+7bea6b893187: Waiting
+6fbdf253bbc2: Waiting
+20655aa3102c: Waiting
+1a73b54f556b: Waiting
+2eb442856672: Layer already exists
+d2d7ec0f6756: Layer already exists
+9003fea7a068: Layer already exists
+a45dd074aa60: Layer already exists
+4cb10dd2545b: Layer already exists
+1a73b54f556b: Layer already exists
+d52f02c6501c: Layer already exists
+e624a5370eca: Layer already exists
+7bea6b893187: Layer already exists
+ff5700ec5418: Layer already exists
+6fbdf253bbc2: Layer already exists
+20655aa3102c: Layer already exists
+v1.12.0: digest: sha256:3fd94b7f61f66eba520f76ce2119a9041cb9bacf925719b8cacbd945c250d5a4 size: 2816
+Created patch: patches/cert-manager-cainjector-image-patch.yaml
+Mirroring quay.io/jetstack/cert-manager-webhook:v1.12.0 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/jetstack-cert-manager-webhook:v1.12.0
+v1.12.0: Pulling from jetstack/cert-manager-webhook
+Digest: sha256:ec4306b243d98cce7c3b1f994f2dae660059ef521b2b24588cfdc950bd816d4c
+Status: Image is up to date for quay.io/jetstack/cert-manager-webhook:v1.12.0
+quay.io/jetstack/cert-manager-webhook:v1.12.0
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/jetstack-cert-manager-webhook]
+4b06b8436d85: Preparing
+f0273367aefd: Preparing
+6d05bbc31160: Preparing
+4cb10dd2545b: Preparing
+d2d7ec0f6756: Preparing
+1a73b54f556b: Preparing
+e624a5370eca: Preparing
+d52f02c6501c: Preparing
+ff5700ec5418: Preparing
+7bea6b893187: Preparing
+6fbdf253bbc2: Preparing
+20655aa3102c: Preparing
+d52f02c6501c: Waiting
+ff5700ec5418: Waiting
+7bea6b893187: Waiting
+6fbdf253bbc2: Waiting
+20655aa3102c: Waiting
+1a73b54f556b: Waiting
+e624a5370eca: Waiting
+6d05bbc31160: Layer already exists
+f0273367aefd: Layer already exists
+4cb10dd2545b: Layer already exists
+4b06b8436d85: Layer already exists
+d2d7ec0f6756: Layer already exists
+1a73b54f556b: Layer already exists
+ff5700ec5418: Layer already exists
+7bea6b893187: Layer already exists
+e624a5370eca: Layer already exists
+d52f02c6501c: Layer already exists
+6fbdf253bbc2: Layer already exists
+20655aa3102c: Layer already exists
+v1.12.0: digest: sha256:3fdaf80161f7956af73c811683684b791573e741f446376af9e809dbf695a8af size: 2816
+Created patch: patches/cert-manager-webhook-image-patch.yaml
+Mirroring registry.k8s.io/external-dns/external-dns:v0.13.6 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/external-dns-external-dns:v0.13.6
+v0.13.6: Pulling from external-dns/external-dns
+Digest: sha256:404fafa9f814832bb0a46c562ce03b84dc6fb4326643e2315c17a15ffd0783e4
+Status: Image is up to date for registry.k8s.io/external-dns/external-dns:v0.13.6
+registry.k8s.io/external-dns/external-dns:v0.13.6
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/external-dns-external-dns]
+5b3c00dc51c0: Preparing
+ffe56a1c5f38: Preparing
+4cb10dd2545b: Preparing
+d2d7ec0f6756: Preparing
+1a73b54f556b: Preparing
+e624a5370eca: Preparing
+d52f02c6501c: Preparing
+ff5700ec5418: Preparing
+7bea6b893187: Preparing
+6fbdf253bbc2: Preparing
+20655aa3102c: Preparing
+d52f02c6501c: Waiting
+ff5700ec5418: Waiting
+7bea6b893187: Waiting
+6fbdf253bbc2: Waiting
+20655aa3102c: Waiting
+e624a5370eca: Waiting
+5b3c00dc51c0: Layer already exists
+4cb10dd2545b: Layer already exists
+ffe56a1c5f38: Layer already exists
+d2d7ec0f6756: Layer already exists
+1a73b54f556b: Layer already exists
+e624a5370eca: Layer already exists
+d52f02c6501c: Layer already exists
+6fbdf253bbc2: Layer already exists
+7bea6b893187: Layer already exists
+ff5700ec5418: Layer already exists
+20655aa3102c: Layer already exists
+v0.13.6: digest: sha256:43e62cb2bc611ade961376b89469bd98a69f49b700d81e6e4422f48d823c5d1a size: 2609
+Created patch: patches/dns-external-dns-image-patch.yaml
+Mirroring docker.io/emberstack/kubernetes-reflector:9.1.7 -> 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/emberstack-kubernetes-reflector:9.1.7
+9.1.7: Pulling from emberstack/kubernetes-reflector
+Digest: sha256:495bc4df6dc951aa99c38b511ee795c6797631cbcc7ef27c1b5fb6bc5cc79e88
+Status: Image is up to date for emberstack/kubernetes-reflector:9.1.7
+docker.io/emberstack/kubernetes-reflector:9.1.7
+The push refers to repository [043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/emberstack-kubernetes-reflector]
+beda6af34ad7: Preparing
+5f70bf18a086: Preparing
+1e1fb7b16c1d: Preparing
+f4d1b9d5e4ec: Preparing
+bb3f310faf6e: Preparing
+baedd5a3535b: Preparing
+6809688ab095: Preparing
+864f9b0dd7e2: Preparing
+66a307619b8c: Preparing
+baedd5a3535b: Waiting
+6809688ab095: Waiting
+864f9b0dd7e2: Waiting
+66a307619b8c: Waiting
+1e1fb7b16c1d: Layer already exists
+beda6af34ad7: Layer already exists
+5f70bf18a086: Layer already exists
+f4d1b9d5e4ec: Layer already exists
+bb3f310faf6e: Layer already exists
+66a307619b8c: Layer already exists
+baedd5a3535b: Layer already exists
+6809688ab095: Layer already exists
+864f9b0dd7e2: Layer already exists
+9.1.7: digest: sha256:bb6bb8d3604b0b03e1994c7f7752636f118856f573ef9f9f9500698c19417678 size: 2203
+Created patch: patches/kubernetes-reflector-image-patch.yaml
+All images mirrored and patch files created.
