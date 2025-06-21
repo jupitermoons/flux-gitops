@@ -33,6 +33,7 @@ spec:
               kind: Deployment
               metadata:
                 name: shared-system-reflector
+                namespace: shared-system
               spec:
                 template:
                   spec:
