@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keda-admission-webhooks
+spec:
+  template:
+    spec:
+      containers:
+        - name: manager
+          image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-admission-webhooks:2.14.0

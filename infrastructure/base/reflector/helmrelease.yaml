@@ -24,3 +24,18 @@ spec:
         name: emberstack
         namespace: flux-system
   interval: 5m
+
+  postRenderers:
+    - kustomize:
+        patches:
+          - patch: |
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: reflector
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: reflector
+                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/emberstack-kubernetes-reflector:9.1.7

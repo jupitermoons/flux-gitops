@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-controller
+spec:
+  template:
+    spec:
+      containers:
+        - name: manager
+          image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/fluxcd-notification-controller:v1.6.0
