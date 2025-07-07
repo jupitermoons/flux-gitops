@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: ce-helm-charts
+  namespace: flux-system
+spec:
+  interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts

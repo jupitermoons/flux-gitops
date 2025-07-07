@@ -1,19 +1,10 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: jetstack
-  namespace: flux-system
-spec:
-  url: https://charts.jetstack.io
-  interval: 10m
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: cert-manager
   namespace: flux-system
 spec:
-  targetNamespace: shared-system
+  targetNamespace: kraken-system
   interval: 5m
   chart:
     spec:

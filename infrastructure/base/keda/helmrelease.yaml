@@ -1,20 +1,10 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: kedacore
-  namespace: flux-system
-spec:
-  url: https://kedacore.github.io/charts
-  interval: 10m
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: keda
   namespace: flux-system
 spec:
-  targetNamespace: shared-system
+  targetNamespace: kraken-system
   chart:
     spec:
       chart: keda
@@ -24,3 +14,43 @@ spec:
         name: kedacore
         namespace: flux-system
   interval: 5m
+
+  postRenderers:
+    - kustomize:
+        patches:
+          - patch: |
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: keda-operator
+                namespace: kraken-system
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: keda-operator
+                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda:2.14.0
+          - patch: |
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: keda-admission-webhooks
+                namespace: kraken-system
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: keda-admission-webhooks
+                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-admission-webhooks:2.14.0
+          - patch: |
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: keda-operator-metrics-apiserver
+                namespace: kraken-system
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: keda-operator-metrics-apiserver
+                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/keda-metrics-apiserver:2.14.0

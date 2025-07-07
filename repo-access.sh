@@ -20,8 +20,7 @@ if [ -z "$repos" ]; then
 fi
 
 # Define public read policy
-read_policy=$(cat <<EOF
-{
+read_policy='{
   "Version": "2008-10-17",
   "Statement": [
     {
@@ -29,14 +28,13 @@ read_policy=$(cat <<EOF
       "Effect": "Allow",
       "Principal": "*",
       "Action": [
-        "ecr:BatchGetImage",
-        "ecr:GetDownloadUrlForLayer"
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage"
       ]
     }
   ]
-}
-EOF
-)
+}'
 
 # Apply policy to each repo
 for repo in $repos; do

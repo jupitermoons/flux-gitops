@@ -1,29 +1,18 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: emberstack
-  namespace: flux-system
-spec:
-  url: https://emberstack.github.io/helm-charts
-  interval: 10m
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: reflector
   namespace: flux-system
 spec:
-  targetNamespace: shared-system
+  targetNamespace: kraken-system
   chart:
     spec:
-      chart: reflector
+      chart: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts/reflector
       version: "9.1.7"
       sourceRef:
-        kind: HelmRepository
-        name: emberstack
+        kind: OCIRepository
+        name: ce-helm-charts
         namespace: flux-system
-  interval: 5m
 
   postRenderers:
     - kustomize:
@@ -32,8 +21,8 @@ spec:
               apiVersion: apps/v1
               kind: Deployment
               metadata:
-                name: shared-system-reflector
-                namespace: shared-system
+                name: kraken-system-reflector
+                namespace: kraken-system
               spec:
                 template:
                   spec:

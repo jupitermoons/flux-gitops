@@ -54,22 +54,28 @@ for image in "${images[@]}"; do
   image_tag=$(echo "$image" | cut -d: -f2)
   target="${ECR_REGISTRY}/${image_repo}:${image_tag}"
 
-  echo "Mirroring $image -> $target"
+  echo ""
+  echo "==> Processing $image"
+  echo "Target ECR Image: $target"
 
-  docker pull "$image"
+  echo "Pulling $image for linux/amd64..."
+  docker pull --platform=linux/amd64 "$image"
+
+  echo "Tagging as $target"
   docker tag "$image" "$target"
 
-  # Ensure repo exists
+  echo "Ensuring ECR repo ${ECR_REPO}/${image_repo} exists..."
   aws ecr describe-repositories --repository-names "${ECR_REPO}/${image_repo}" --profile "$AWS_PROFILE" >/dev/null 2>&1 || \
     aws ecr create-repository --repository-name "${ECR_REPO}/${image_repo}" --profile "$AWS_PROFILE" >/dev/null
 
+  echo "Pushing to ECR..."
   docker push "$target"
 
-  # Derive deployment name (fallback: repo name without version)
+  # Derive deployment name (fallback: repo name without registry)
   deployment_name=$(echo "$image_repo" | cut -d- -f2-)
 
-  # Patch filename
   patch_file="${PATCH_DIR}/${deployment_name}-image-patch.yaml"
+  echo "Creating patch file: $patch_file"
 
   cat > "$patch_file" <<EOF
 apiVersion: apps/v1
@@ -85,7 +91,8 @@ spec:
 EOF
 
   echo "  - ${patch_file}" >> "$KUSTOMIZATION_FILE"
-  echo "Created patch: ${patch_file}"
+  echo "✔ Done: $image -> $target"
 done
 
-echo "All images mirrored and patch files created."
+echo ""
+echo "✅ All images mirrored and patch files created."

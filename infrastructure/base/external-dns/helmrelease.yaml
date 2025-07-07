@@ -1,20 +1,10 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: external-dns
-  namespace: flux-system
-spec:
-  url: https://kubernetes-sigs.github.io/external-dns/
-  interval: 10m
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: external-dns
   namespace: flux-system
 spec:
-  targetNamespace: shared-system
+  targetNamespace: kraken-system
   chart:
     spec:
       chart: external-dns
