@@ -7,11 +7,13 @@ spec:
   interval: 5m
   releaseName: reflector
   targetNamespace: kraken-system
+  values:
+    podLabels:
+      RoleType: k8srfl
   chartRef:
     kind: OCIRepository
     name: ce-reflector-chart
     namespace: flux-system
-
   postRenderers:
     - kustomize:
         patches:
