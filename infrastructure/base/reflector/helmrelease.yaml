@@ -4,11 +4,11 @@ metadata:
   name: reflector
   namespace: flux-system
 spec:
+  interval: 10m
   targetNamespace: kraken-system
   chart:
     spec:
-      chart: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts/reflector
-      version: "9.1.7"
+      chart: reflector   # just the chart name inside the OCI repo
       sourceRef:
         kind: OCIRepository
         name: ce-helm-charts

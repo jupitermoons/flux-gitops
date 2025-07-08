@@ -1,8 +1,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: ce-helm-charts
+  name: ce-reflector-chart
   namespace: flux-system
 spec:
   interval: 10m
-  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts/reflector
+  ref:
+    tag: 9.1.7  
+  secretRef:
+    name: ce-ecr-auth
