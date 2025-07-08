@@ -3,19 +3,28 @@ set -euo pipefail
 
 AWS_PROFILE="gardener-poc"
 AWS_REGION="us-west-2"
-ECR_REPO_PREFIX="ce-helm-charts"
+ECR_REPO_PREFIX="ce-addon"
 AWS_ACCOUNT_ID="043309336908"
 
-echo "Fetching repositories under ${ECR_REPO_PREFIX}..."
+echo "Fetching repositories under prefix '${ECR_REPO_PREFIX}'..."
 
+# Fetch all repositories and filter in shell to support wildcards
 repos=$(aws ecr describe-repositories \
   --profile "$AWS_PROFILE" \
   --region "$AWS_REGION" \
-  --query "repositories[?starts_with(repositoryName, \`${ECR_REPO_PREFIX}/\`)].repositoryName" \
+  --query 'repositories[].repositoryName' \
   --output text)
 
-if [ -z "$repos" ]; then
-  echo "No repositories found under prefix '$ECR_REPO_PREFIX'."
+# Filter repositories starting with the given prefix
+filtered_repos=()
+for repo in $repos; do
+  if [[ "$repo" == ${ECR_REPO_PREFIX}* ]]; then
+    filtered_repos+=("$repo")
+  fi
+done
+
+if [ ${#filtered_repos[@]} -eq 0 ]; then
+  echo "No repositories found under prefix '${ECR_REPO_PREFIX}'."
   exit 0
 fi
 
@@ -36,8 +45,8 @@ read_policy='{
   ]
 }'
 
-# Apply policy to each repo
-for repo in $repos; do
+# Apply the policy to each matching repo
+for repo in "${filtered_repos[@]}"; do
   echo "Setting public read policy for: $repo"
   aws ecr set-repository-policy \
     --profile "$AWS_PROFILE" \
@@ -46,5 +55,4 @@ for repo in $repos; do
     --policy-text "$read_policy"
 done
 
-echo "✅ All repositories under '$ECR_REPO_PREFIX/' are now public."
-
+echo "✅ Policy applied to ${#filtered_repos[@]} repositories."
