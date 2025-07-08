@@ -1,8 +1,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
-  name: jetstack
+  name: ce-certmanager-chart
   namespace: flux-system
 spec:
-  url: https://charts.jetstack.io
   interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-charts/cert-manager
+  ref:
+    tag: v1.12.0
+  secretRef:
+    name: ce-ecr-auth

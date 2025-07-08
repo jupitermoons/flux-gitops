@@ -1,8 +1,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
-  name: gatekeeper
+  name: ce-gatekeeper-chart
   namespace: flux-system
 spec:
-  url: https://open-policy-agent.github.io/gatekeeper/charts
   interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-charts/gatekeeper
+  ref:
+    tag: 3.14.0
+  secretRef:
+    name: ce-ecr-auth

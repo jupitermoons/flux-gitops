@@ -1,8 +1,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
-  name: external-dns
+  name: ce-extDNS-chart
   namespace: flux-system
 spec:
-  url: https://kubernetes-sigs.github.io/external-dns/
   interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-charts/external-dns
+  ref:
+    tag: 1.13.1
+  secretRef:
+    name: ce-ecr-auth

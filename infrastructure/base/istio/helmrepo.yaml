@@ -1,8 +1,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
-  name: istio
+  name: ce-istio-chart
   namespace: flux-system
 spec:
-  url: https://istio-release.storage.googleapis.com/charts
   interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-charts/istiod
+  ref:
+    tag: 1.22.0
+  secretRef:
+    name: ce-ecr-auth

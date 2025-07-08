@@ -1,9 +1,13 @@
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
-  name: kedacore
+  name: ce-kedacore-chart
   namespace: flux-system
 spec:
-  url: https://kedacore.github.io/charts
   interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-charts/keda
+  ref:
+    tag: 2.14.2
+  secretRef:
+    name: ce-ecr-auth
