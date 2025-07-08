@@ -8,11 +8,11 @@ spec:
   targetNamespace: kraken-system
   chart:
     spec:
-      chart: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts/reflector
-      version: "9.1.7"
-      sourceRef:
+      #chart: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-helm-charts/reflector
+      #version: "9.1.7"
+      chartRef:
         kind: OCIRepository
-        name: ce-helm-charts
+        name: ce-reflector-chart
         namespace: flux-system
 
   postRenderers:
