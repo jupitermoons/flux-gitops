@@ -12,18 +12,3 @@ spec:
     name: ce-reflector-chart
     namespace: flux-system
 
-  postRenderers:
-    - kustomize:
-        patches:
-          - patch: |
-              apiVersion: apps/v1
-              kind: Deployment
-              metadata:
-                name: kraken-system-reflector
-                namespace: kraken-system
-              spec:
-                template:
-                  spec:
-                    containers:
-                      - name: reflector
-                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/emberstack-kubernetes-reflector:9.1.7
