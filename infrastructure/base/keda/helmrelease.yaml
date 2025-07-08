@@ -29,7 +29,7 @@ spec:
                   spec:
                     containers:
                       - name: keda-operator
-                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda:2.14.0
+                        image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/kedacore-keda:2.14.0
           - patch: |
               apiVersion: apps/v1
               kind: Deployment
@@ -41,7 +41,7 @@ spec:
                   spec:
                     containers:
                       - name: keda-admission-webhooks
-                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/kedacore-keda-admission-webhooks:2.14.0
+                        image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/kedacore-keda-admission-webhooks:2.14.0
           - patch: |
               apiVersion: apps/v1
               kind: Deployment
@@ -53,4 +53,4 @@ spec:
                   spec:
                     containers:
                       - name: keda-operator-metrics-apiserver
-                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/keda-metrics-apiserver:2.14.0
+                        image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/keda-metrics-apiserver:2.14.0

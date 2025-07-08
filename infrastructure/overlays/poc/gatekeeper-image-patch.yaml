@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: manager
-          image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/gatekeeper:v3.14.0
+          image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/gatekeeper:v3.14.0

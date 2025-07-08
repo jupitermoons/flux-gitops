@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  url: oci://043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-charts/gatekeeper
+  url: oci://043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-charts/gatekeeper
   ref:
     tag: 3.14.0
   #secretRef:

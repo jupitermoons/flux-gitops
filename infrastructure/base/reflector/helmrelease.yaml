@@ -28,4 +28,4 @@ spec:
                   spec:
                     containers:
                       - name: reflector
-                        image: 043309336908.dkr.ecr.us-west-2.amazonaws.com/ce-addon-images/emberstack-kubernetes-reflector:9.1.7
+                        image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/emberstack-kubernetes-reflector:9.1.7
