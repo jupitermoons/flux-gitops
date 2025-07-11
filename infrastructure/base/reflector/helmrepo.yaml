@@ -8,5 +8,5 @@ spec:
   url: oci://043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-charts/reflector
   ref:
     tag: 9.1.7
-  #secretRef:
-    #name: ce-ecr-auth
+  secretRef:
+    name: ce-ecr-auth

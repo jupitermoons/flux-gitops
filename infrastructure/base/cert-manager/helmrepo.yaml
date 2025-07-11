@@ -8,5 +8,5 @@ spec:
   url: oci://043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-charts/cert-manager
   ref:
     tag: v1.12.0
-  #secretRef:
-    #name: ce-ecr-auth
+  secretRef:
+    name: ce-ecr-auth
