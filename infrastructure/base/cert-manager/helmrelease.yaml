@@ -5,12 +5,12 @@ metadata:
   namespace: kraken-system
 spec:
   targetNamespace: kraken-system
-  interval: 5m
-  releaseName: cert-manager  
   chartRef:
     kind: OCIRepository
     name: cert-manager
     namespace: flux-system
+  interval: 5m
+  releaseName: cert-manager
   values:
     installCRDs: true
   postRenderers:
