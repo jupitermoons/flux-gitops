@@ -14,6 +14,7 @@ spec:
         name: external-dns
         namespace: flux-system
   interval: 5m
+  releaseName: external-dns
   values:
     provider: aws
     policy: upsert-only
@@ -23,3 +24,17 @@ spec:
       - yourdomain.com
     serviceMonitor:
       enabled: false
+  postRenderers:
+    - kustomize:
+        patches:
+          - patch: |
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: dns-external-dns
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: manager
+                        image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/external-dns-external-dns:v0.13.6
