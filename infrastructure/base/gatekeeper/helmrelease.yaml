@@ -7,8 +7,6 @@ spec:
   install:
     createNamespace: true
   targetNamespace: gatekeeper-system
-  interval: 5m
-  releaseName: gatekeeper  
   chartRef:
     kind: OCIRepository
     name: gatekeeper
