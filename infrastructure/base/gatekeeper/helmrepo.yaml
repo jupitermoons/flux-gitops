@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: ce-gatekeeper-chart
+  name: gatekeeper
   namespace: flux-system
 spec:
   interval: 10m

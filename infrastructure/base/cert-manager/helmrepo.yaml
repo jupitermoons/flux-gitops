@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: ce-certmanager-chart
+  name: cert-manager
   namespace: flux-system
 spec:
   interval: 10m

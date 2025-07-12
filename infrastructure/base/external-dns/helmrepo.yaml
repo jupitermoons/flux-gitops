@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: ce-extdns-chart
+  name: external-dns
   namespace: flux-system
 spec:
   interval: 10m

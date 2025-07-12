@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: ce-kedacore-chart
+  name: keda
   namespace: flux-system
 spec:
   interval: 10m

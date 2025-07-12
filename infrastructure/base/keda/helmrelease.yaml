@@ -2,12 +2,12 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: keda
-  namespace: flux-system
+  namespace: kraken-system
 spec:
   targetNamespace: kraken-system
   chartRef:
     kind: OCIRepository
-    name: ce-kedacore-chart
+    name: keda
     namespace: flux-system
   interval: 5m
   releaseName: keda
