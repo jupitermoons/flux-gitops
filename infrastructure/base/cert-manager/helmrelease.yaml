@@ -21,6 +21,7 @@ spec:
               kind: Deployment
               metadata:
                 name: cert-manager
+                namespace: kraken-system
               spec:
                 template:
                   spec:
@@ -32,6 +33,7 @@ spec:
               kind: Deployment
               metadata:
                 name: cert-manager-webhook
+                namespace: kraken-system
               spec:
                 template:
                   spec:
@@ -43,6 +45,7 @@ spec:
               kind: Deployment
               metadata:
                 name: cert-manager-cainjector
+                namespace: kraken-system
               spec:
                 template:
                   spec:
