@@ -28,6 +28,7 @@ spec:
               kind: Deployment
               metadata:
                 name: dns-external-dns
+                namespace: kraken-system
               spec:
                 template:
                   spec:
