@@ -10,3 +10,16 @@ spec:
     tag: 1.22.0
   secretRef:
     name: ce-ecr-auth
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: gateway
+  namespace: flux-system
+spec:
+  interval: 10m
+  url: oci://043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-charts/gateway
+  ref:
+    tag: 1.22.0
+  secretRef:
+    name: ce-ecr-auth

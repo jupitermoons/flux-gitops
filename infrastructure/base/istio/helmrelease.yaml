@@ -36,3 +36,31 @@ spec:
       accessLogFile: "/dev/stdout"
     pilot:
       autoscaleEnabled: true
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: istio-ingressgateway
+  namespace: istio-system
+spec:
+  releaseName: istio-ingressgateway
+  targetNamespace: istio-system
+  interval: 5m
+  chartRef:
+    kind: OCIRepository
+    name: gateway
+    namespace: flux-system
+  dependsOn:
+    - name: istiod
+  values:
+    gateways:
+      istio-ingressgateway:
+        enabled: true
+        type: LoadBalancer
+        ports:
+          - name: http
+            port: 80
+            targetPort: 8080
+          - name: https
+            port: 443
+            targetPort: 8443
