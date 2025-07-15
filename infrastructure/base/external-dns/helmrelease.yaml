@@ -17,6 +17,24 @@ spec:
     registry: txt
     txtOwnerId: gardener
     domainFilters:
-      - yourdomain.com
+      - test.k8s.cnqr.tech
+    aws:
+      zoneType: public
+      region: us-west-1
     serviceMonitor:
       enabled: false
+  postRenderers:
+    - kustomize:
+        patches:
+          - patch: |
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: dns-external-dns
+                namespace: kraken-system
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: manager
+                        image: 043309336908.dkr.ecr.us-west-1.amazonaws.com/ce-addon-images/external-dns-external-dns:v0.13.6
